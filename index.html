@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 2 – Lavanya | ApexPlanet Internship</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <i class="fas fa-laptop-code"></i>
+      <span>ApexPlanet <span class="accent">Task 2</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showSection('home')" class="nav-link active" id="nav-home">Home</a></li>
+      <li><a href="#" onclick="showSection('contact')" class="nav-link" id="nav-contact">Contact</a></li>
+      <li><a href="#" onclick="showSection('dashboard')" class="nav-link" id="nav-dashboard">Dashboard</a></li>
+      <li><a href="#" onclick="showSection('gallery')" class="nav-link" id="nav-gallery">Gallery</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button class="dark-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+        <i class="fas fa-moon" id="darkIcon"></i>
+      </button>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HOME SECTION ─── -->
+  <section id="home" class="section active">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-eyebrow"><i class="fas fa-star"></i> ApexPlanet Internship Project</p>
+          <h1 class="hero-title">Responsive Contact<br />&amp; <span class="accent">Task Manager</span></h1>
+          <p class="hero-desc">
+            A fully responsive web application built with <strong>HTML, CSS & JavaScript</strong>.<br />
+            Demonstrates Flexbox, CSS Grid, form validation, DOM manipulation,
+            and a dynamic image gallery — all in one place.
+          </p>
+          <div class="hero-features">
+            <span><i class="fas fa-check-circle"></i> Contact Form</span>
+            <span><i class="fas fa-check-circle"></i> To-Do List</span>
+            <span><i class="fas fa-check-circle"></i> Image Gallery</span>
+            <span><i class="fas fa-check-circle"></i> Responsive Design</span>
+          </div>
+          <button class="btn-primary" onclick="showSection('contact')">
+            Get Started &nbsp;<i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-card card1"><i class="fas fa-code"></i><span>HTML & CSS</span></div>
+          <div class="hero-mockup">
+            <div class="mockup-bar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-line w80 accent-bg"></div>
+              <div class="mockup-line w60"></div>
+              <div class="mockup-line w90"></div>
+              <div class="mockup-line w50"></div>
+              <div class="mockup-line w70"></div>
+              <div class="mockup-line w40"></div>
+            </div>
+          </div>
+          <div class="floating-card card2"><i class="fas fa-check"></i><span>Task Done</span></div>
+          <div class="floating-card card3"><i class="fas fa-images"></i><span>Gallery</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT FORM SECTION ─── -->
+  <section id="contact" class="section">
+    <div class="page-header">
+      <h2><i class="fas fa-envelope"></i> Contact Form</h2>
+      <p>Fill in your details to get access to your personal dashboard.</p>
+    </div>
+    <div class="form-wrapper">
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fname">Full Name <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input type="text" id="fname" placeholder="Enter your full name" />
+            </div>
+            <span class="error" id="err-name"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="email" placeholder="Enter your email" />
+            </div>
+            <span class="error" id="err-email"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fas fa-phone"></i>
+              <input type="tel" id="phone" placeholder="Enter 10-digit number" />
+            </div>
+            <span class="error" id="err-phone"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <div class="input-wrap">
+              <i class="fas fa-tag"></i>
+              <input type="text" id="subject" placeholder="What's this about?" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="college">College Name <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fas fa-university"></i>
+              <input type="text" id="college" placeholder="Enter your college name" />
+            </div>
+            <span class="error" id="err-college"></span>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender <span class="req">*</span></label>
+            <div class="input-wrap select-wrap">
+              <i class="fas fa-person"></i>
+              <select id="gender">
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
+            <span class="error" id="err-gender"></span>
+          </div>
+
+        </div>
+        <button type="submit" class="btn-primary">
+          <i class="fas fa-paper-plane"></i> &nbsp;Submit &amp; Go to Dashboard
+        </button>
+        <p class="success-msg" id="successMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── DASHBOARD (To-Do + Gallery nav) ─── -->
+  <section id="dashboard" class="section">
+    <div class="page-header">
+      <h2 id="dashGreet">👋 Welcome!</h2>
+      <p>Manage your tasks and images from your personal dashboard.</p>
+    </div>
+
+    <div class="dashboard-grid">
+
+      <!-- TO-DO LIST -->
+      <div class="card todo-card">
+        <div class="card-header">
+          <i class="fas fa-list-check"></i>
+          <h3>My To-Do List</h3>
+        </div>
+        <div class="todo-input-row">
+          <input type="text" id="taskInput" placeholder="Add a new task..." />
+          <button onclick="addTask()" class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        </div>
+        <p class="task-count">Total Tasks: <strong id="taskCount">0</strong></p>
+        <ul id="taskList" class="task-list"></ul>
+        <p class="empty-state" id="emptyTodo">No tasks yet. Add one above! ✨</p>
+      </div>
+
+      <!-- QUICK GALLERY PREVIEW -->
+      <div class="card gallery-preview-card">
+        <div class="card-header">
+          <i class="fas fa-images"></i>
+          <h3>Image Gallery</h3>
+        </div>
+        <p class="gallery-hint">Upload and manage your photos in the gallery section.</p>
+        <div id="galleryPreview" class="gallery-mini-grid"></div>
+        <button class="btn-primary mt-1" onclick="showSection('gallery')">
+          <i class="fas fa-arrow-right"></i> &nbsp;Open Gallery
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── IMAGE GALLERY SECTION ─── -->
+  <section id="gallery" class="section">
+    <div class="page-header">
+      <h2><i class="fas fa-images"></i> Image Gallery</h2>
+      <p>Upload your photos — they display in a responsive CSS Grid layout.</p>
+    </div>
+
+    <div class="gallery-controls">
+      <label for="imgUpload" class="btn-upload">
+        <i class="fas fa-upload"></i> &nbsp;Upload Images
+        <input type="file" id="imgUpload" multiple accept="image/*" onchange="handleUpload(event)" hidden />
+      </label>
+      <button class="btn-outline" onclick="clearGallery()"><i class="fas fa-trash"></i> Clear All</button>
+    </div>
+
+    <div id="galleryGrid" class="gallery-grid">
+      <div class="gallery-empty" id="galleryEmpty">
+        <i class="fas fa-photo-film"></i>
+        <p>No images yet. Upload some photos to get started!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <p>© 2026 Responsive Contact &amp; Task Manager &nbsp;|&nbsp; Developed by <span class="accent">Lavanya</span>
+      &nbsp;|&nbsp; ApexPlanet Internship</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
